@@ -1,0 +1,167 @@
+﻿@media screen {
+    body {
+        height: 100%;
+        display: -ms-grid;
+        -ms-grid-rows: 125px 1fr 150px;
+        -ms-grid-columns: 1fr;
+    }
+    .top-app-bar {
+        display: -ms-grid;
+        -ms-grid-row: 1;
+        -ms-grid-columns: 10px 100px 1fr 10px 200px 10px;
+        -ms-grid-rows: 10px 1fr 10px;
+        background: rgba(0,0,0,0.2);
+    }
+        .top-app-bar .navigation {
+            -ms-grid-column: 3;
+            -ms-grid-row: 2;
+            -ms-grid-row-align: end;
+            -ms-grid-column-align: start;
+            padding: 10px;
+        }
+        .top-app-bar #userInfo {
+            -ms-grid-column: 5;
+            -ms-grid-row: 2;
+            -ms-grid-row-align: center;
+        }
+        .top-app-bar .disk-usage {
+            width: 100%;
+            height: 10px;
+        }
+        .top-app-bar .user-name {
+            font-size: 25px;
+            line-height: 1;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+        .top-app-bar .logo-wrapper {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+            -ms-grid-row-align: center;
+        }
+            .top-app-bar .logo-wrapper img {
+                width: 100%;
+            }
+        .top-app-bar .working-progress {
+            -ms-grid-row: 3;
+            -ms-grid-column-span: 1;
+            -ms-grid-column: 2;
+            -ms-grid-row-align: center;
+            -ms-transform: translateZ(0);
+            width: 100%;
+        }
+
+    .main-content {
+        -ms-grid-row: 2;
+        margin: 20px;
+        height: 100%;
+    }
+        .main-content .items {
+            height: 100%;
+        }
+            .items .file {
+                width: 300px;
+                height: 100px;
+                display: -ms-grid;
+                -ms-grid-columns: 100px 1fr;
+                -ms-grid-rows: 1fr;
+            }
+                .items .file .icon-wrapper {
+                    display: -ms-grid;
+                    -ms-grid-column: 1;
+                    -ms-grid-column-align: center;
+                    -ms-grid-row-align: center;
+                    text-align: center;
+                }
+                    .items .file .icon-wrapper img {
+                         -ms-grid-row-align:center;
+                         width: 80px;
+                         padding: 10px;
+                         height: auto;
+                    }
+                .items .file .name {
+                    display: -ms-grid;
+                    -ms-grid-column: 2;
+                    -ms-grid-row-align:start;
+                    padding: 10px;
+                }
+
+        .items .transfer {
+            display: -ms-grid;
+            -ms-grid-columns: 10px 1fr 10px;
+            -ms-grid-rows: 30px 10px 20px 20px;
+            height: 80px;
+            width: 650px;
+        }
+            .items .transfer .name {
+                -ms-grid-row: 1;
+                -ms-grid-column: 2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 5px;
+                margin: 0;
+                height: 100%;
+                font-size: 20px;
+            }
+            .items .transfer .transfer-progress {
+                -ms-grid-row: 3;
+                -ms-grid-column: 2;
+                width: 100%;
+            }
+
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+    body {
+        height: 100%;
+        display: -ms-grid;
+        -ms-grid-rows: 80px 1fr;
+        -ms-grid-columns: 1fr;
+    }
+    .top-app-bar {
+        display: -ms-grid;
+        -ms-grid-row: 1;
+        -ms-grid-columns: 10px 1fr 10px;
+        -ms-grid-rows: 10px 1fr  10px;
+    }
+        .top-app-bar #userInfo {
+            display: none;
+        }
+        .top-app-bar .logo-wrapper {
+            display: none;
+        }
+        .top-app-bar .working-progress {
+            -ms-grid-row: 3;
+            -ms-grid-column: 2;
+            -ms-grid-row-align: center;
+        }
+        .top-app-bar .navigation {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+            -ms-grid-row-align: center;
+            -ms-grid-column-align: start;
+            padding: 10px;
+        }
+    .items {
+     width: 320px;
+     margin: 0 10px;
+     -ms-grid-column-align: center;
+    }
+    .items .transfer,
+    .items .file {
+        width: 280px;
+        height: 50px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}
+

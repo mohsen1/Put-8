@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Putdotio</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Putdotio references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/libs/ext/jquery.js"></script>
+    <script src="/js/libs/ext/underscore.js"></script>
+    <script src="/js/libs/ext/backbone.js"></script>
+    <script src="/js/libs/ext/require.js" data-main="js/main"></script>
+</head>
+<body>
+    <!-- Templates -->
+     <div id="userInfoTemplate" data-win-control="WinJS.Binding.Template">
+         <div class="user-information">
+            <p class="user-name" data-win-bind="textContent: username"></p>
+            <progress data-win-bind="value: percent" class="win-progress disk-usage" max="100" ></progress>
+        </div>
+    </div>
+    <div id="fileTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="file" data-win-bind="alt: id">
+            <div class="icon-wrapper">
+                <img class="icon" src="#" data-win-bind="src: icon" />
+            </div>
+            <span class="name" data-win-bind="textContent: name"></span>
+        </div>
+    </div>
+    <div id="transferTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="transfer">
+            <p class="name" data-win-bind="textContent: name"></p>
+            <progress class="transfer-progress" max="100" data-win-bind="value: percent_done"></progress>
+        </div>
+    </div>
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="simpleHeaderItem">
+            <h1 data-win-bind="textContent: title"></h1>
+        </div>
+    </div>
+
+    <!-- App elements -->
+    <div class="win-appbar top-app-bar">
+        <div class="logo-wrapper">
+            <img src="/images/logo.png" alt="put.io" />
+        </div>
+        <div class="navigation">
+            <button id="goFiles">Files</button>
+            <button id="goTransfers">Transfers</button>
+        </div>
+        <div id="userInfo"></div>
+        <progress id="working" class="working-progress win-progress"></progress>
+    </div>
+    <div data-win-control="WinJS.UI.ListView" data-win-options="{
+        itemTemplate: fileTemplate,
+        groupHeaderTemplate: headerTemplate,
+        layout: {type: WinJS.UI.GridLayout}
+        }" class="items" id="items">
+    </div>
+</body>
+</html>

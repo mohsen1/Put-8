@@ -1,0 +1,21 @@
+﻿<div id="fileTemplate" data-win-control="WinJS.Binding.Template">
+    <div class="file" data-win-bind="alt: id">
+        <div class="icon-wrapper">
+            <img class="icon" src="#" data-win-bind="src: icon" />
+        </div>
+        <span class="name" data-win-bind="textContent: name"></span>
+    </div>
+</div>
+
+<div id="headerTemplate" data-win-control="WinJS.Binding.Template">
+    <div class="simpleHeaderItem">
+        <h1 data-win-bind="textContent: title"></h1>
+    </div>
+</div>
+
+<div data-win-control="WinJS.UI.ListView" data-win-options="{
+    itemTemplate: fileTemplate,
+    groupHeaderTemplate: headerTemplate,
+    layout: {type: WinJS.UI.GridLayout}
+    }" class="items" id="items">
+</div>

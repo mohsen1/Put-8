@@ -1,0 +1,19 @@
+﻿ <!-- Templates -->
+<div id="transferTemplate" data-win-control="WinJS.Binding.Template">
+    <div class="transfer">
+        <p class="name" data-win-bind="textContent: name"></p>
+        <progress class="transfer-progress" max="100" data-win-bind="value: percent_done"></progress>
+    </div>
+</div>
+<div id="headerTemplate" data-win-control="WinJS.Binding.Template">
+    <div class="simpleHeaderItem">
+        <h1 data-win-bind="textContent: title"></h1>
+    </div>
+</div>   
+
+<div data-win-control="WinJS.UI.ListView" data-win-options="{
+    itemTemplate: fileTemplate,
+    groupHeaderTemplate: headerTemplate,
+    layout: {type: WinJS.UI.GridLayout}
+    }" class="items" id="items">
+</div>
